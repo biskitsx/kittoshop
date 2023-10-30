@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "daisyui": "^3.9.4",
+    "next": "latest",
+    "nuka-carousel": "^6.0.3",
     "react": "latest",
-    "react-dom": "latest",
-    "next": "latest"
+    "react-dom": "latest"
   },
   "devDependencies": {
     "typescript": "latest",
