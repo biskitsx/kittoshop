@@ -1,10 +1,11 @@
 import React from 'react'
 import ProductCard from './ProductCard'
+import Link from 'next/link'
 
 function NewArrival() {
     return (
-        <div className='py-24'>
-            <div className='container flex flex-col gap-12'>
+        <div className='py-12'>
+            <div className='container flex flex-col gap-12 justify-center items-center'>
                 <h1 className='text-center text-3xl font-medium tracking-wider'>New Arrivals</h1>
                 <div className='grid gap-3 grid-cols-4'>
                     <ProductCard
@@ -32,6 +33,7 @@ function NewArrival() {
                         productStar={3}
                     />
                 </div>
+                <Link href="/collections" className='border-b border-neutral pb-1'>VIEW ALL</Link>
             </div>
         </div>
     )
