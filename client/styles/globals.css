@@ -9,7 +9,13 @@
     lg:w-960
     xl:w-1140
     2xl:w-1320 
-    px-8
+    /* px-8 */
     h-full
     mx-auto
+}
+
+* {
+    font-family: 'Fira Sans', sans-serif;
+/* font-family: 'Kanit', sans-serif; */
+/* font-family: 'Poppins', sans-serif; */
 }
