@@ -2,11 +2,11 @@ import React from 'react'
 
 function Nav() {
     return (
-        <div className='flex flex-col'>
+        <div className='flex flex-col shadow-md'>
             <div className='bg-accent py-2'>
                 <p className='text-center'>Save Up to 50% Off On First Order!</p>
             </div>
-            <div className="navbar bg-base-100 container">
+            <div className="navbar bg-base-100 container ">
 
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -21,7 +21,7 @@ function Nav() {
                     </div>
                 </div>
                 <div className="navbar-center">
-                    <a className="btn btn-ghost normal-case text-2xl tracking-widest">KITTOSHOP</a>
+                    <a className="btn btn-ghost normal-case text-2xl tracking-widest" href='/'>KITTOSHOP</a>
                 </div>
                 <div className="navbar-end">
                     <button className="btn btn-ghost btn-circle">
