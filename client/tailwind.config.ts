@@ -20,6 +20,11 @@ const config: Config = {
             }
         },
     },
+    daisyui: {
+        themes: [
+            "pastel"
+        ]
+    },
     plugins: [daisyui],
 }
 export default config
