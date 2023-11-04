@@ -12,6 +12,9 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
     return (
         <>
+            <div className='bg-accent py-2'>
+                <p className='text-center'>Save Up to 50% Off On First Order!</p>
+            </div>
             <Nav />
             <CarouselPicture />
             <NewArrival />
