@@ -6,6 +6,9 @@ import React from 'react'
 const collections = () => {
     return (
         <>
+            <div className='bg-accent py-2'>
+                <p className='text-center'>Save Up to 50% Off On First Order!</p>
+            </div>
             <Nav />
             <div className="container py-12 flex flex-col items-center justify-center gap-8 tracking-wider">
                 <h1 className='text-3xl'>Collection</h1>
