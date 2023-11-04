@@ -2,7 +2,7 @@ import React from 'react'
 
 function Filter() {
     return (
-        <aside className='flex-col w-72'>
+        <aside className='flex-col '>
             <div className='flex-col border-gray-300 border-t border-x flex'>
                 <div className='bg-gray-100 p-4'>
                     <h2>Filter By</h2>
