@@ -15,9 +15,13 @@
 }
 .black-button {
     background-color: #232323;
-
     @apply uppercase   text-white ease-in-out duration-300
     hover:bg-inherit hover:text-black py-2 px-4 
+}
+.white-button {
+    background-color: white;
+    @apply uppercase    ease-in-out duration-300 text-black
+    hover:bg-black hover:text-white py-2 px-4 
 }
 
 * {
