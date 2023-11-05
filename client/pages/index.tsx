@@ -28,9 +28,8 @@ export default function Home() {
                         <p className='capitalize'></p>
                         Celebrate In Style At Our In-Store <br /> Launch For Our Newest Collection & Accessories
                     </div>
-                    <Countdown />
-                    <div>
-
+                    <div className='flex flex-col sm:flex-row gap-4 items-center justify-center'>
+                        <Countdown />
                         <button className='black-button'>get 20% off</button>
                     </div>
                     {/* <button className=''>get 20% off</button> */}
