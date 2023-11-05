@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+.imageRotateHorizontal:hover{
+    -moz-animation: spinHorizontal .8s infinite linear;
+    -o-animation: spinHorizontal .8s infinite linear;    
+    -webkit-animation: spinHorizontal .8s infinite linear;
+    animation: spinHorizontal .8s infinite linear;
+}
+
+@keyframes spinHorizontal {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+
 .container {
     @apply w-10/12 
     sm:w-540
@@ -15,6 +28,7 @@
 }
 .black-button {
     background-color: #232323;
+    border: 1px solid #232323;
     @apply uppercase   text-white ease-in-out duration-300
     hover:bg-inherit hover:text-black py-2 px-4 
 }
