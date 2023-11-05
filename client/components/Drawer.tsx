@@ -1,6 +1,10 @@
 import React from 'react'
+import ProductCart from './ProductCart'
+import { useSelector } from 'react-redux'
+import { selectCart } from '@/store/cartSlice'
 
 function Drawer() {
+    const carts = useSelector(selectCart)
     return (
         <div className="drawer-side z-40">
             <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
@@ -9,6 +13,11 @@ function Drawer() {
                 <div className='border-b border-gray-500' />
                 <div className='bg-accent p-2'>
                     <p>You are eligible for free shipping!</p>
+                </div>
+                <div className='flex flex-col gap-4'>
+                    {carts.map((cart, index) => {
+                        return <ProductCart key={index} productName={cart.name} productPrice={cart.price} productImg={cart.image} count={cart.count} />
+                    })}
                 </div>
             </ul>
         </div>
