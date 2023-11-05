@@ -1,3 +1,4 @@
+import { Delete } from '@mui/icons-material'
 import Image from 'next/image'
 import React from 'react'
 
@@ -5,16 +6,19 @@ interface ProductCartProps {
     productImg: string,
     productName: string,
     productPrice: number,
+    count: number
 }
 
 
-function ProductCart({ productImg, productName, productPrice }: ProductCartProps) {
+function ProductCart({ productImg, productName, productPrice, count }: ProductCartProps) {
     return (
-        <div className='flex'>
-            <Image src={productImg} alt="Shoes" className='w-full hover:brightness-95 transition-all' width={1000} height={1000} />
+        <div className='flex flex-row gap-4 relative'>
+            <Image src={productImg} alt="Shoes" className='w-32 border border-gray-300' width={1000} height={1000} />
             <div>
-                <p></p>
+                <p>{productName}</p>
+                <p>{count} X ${productPrice}.00</p>
             </div>
+            <Delete className='absolute top-1 right-1' />
         </div>
     )
 }
