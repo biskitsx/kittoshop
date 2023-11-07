@@ -13,6 +13,11 @@ func NewRouter(app *fiber.App, client *mongo.Client) {
 	productService := service.NewProductService(productRepository)
 	productHandler := handler.NewProductHandler(productService)
 
+	app.Get("/", func(c *fiber.Ctx) error {
+		return c.JSON(fiber.Map{
+			"msg": "Hello, World 👋!",
+		})
+	})
 	app.Get("/products", productHandler.GetAllProducts)
 	app.Post("/products", productHandler.CreateProduct)
 }
