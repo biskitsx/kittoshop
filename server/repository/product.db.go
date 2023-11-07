@@ -37,7 +37,7 @@ func (r *productRepository) FindAll(queries map[string]string) ([]Product, error
 	coll := r.db.Collection("products")
 	filter := bson.D{}
 	for key, value := range queries {
-		if key == "colors" || key == "size" {
+		if key == "colors" || key == "size" || key == "limit" {
 			continue
 		}
 		if key == "lowest_price" {
@@ -48,7 +48,12 @@ func (r *productRepository) FindAll(queries map[string]string) ([]Product, error
 			filter = append(filter, bson.E{Key: key, Value: bson.D{{"$regex", value}}})
 		}
 	}
-	opt := options.Find().SetSkip(0).SetLimit(100)
+
+	opt := options.Find().SetSkip(0)
+	if queries["limit"] != "" {
+		limit := StringToInt(queries["limit"])
+		opt.SetLimit(int64(limit))
+	}
 
 	cursor, err := coll.Find(context.Background(), filter, opt)
 	if err != nil {
