@@ -14,6 +14,7 @@
     "@mui/icons-material": "^5.14.16",
     "@mui/material": "^5.14.16",
     "@reduxjs/toolkit": "^1.9.7",
+    "axios": "^1.6.0",
     "daisyui": "^3.9.4",
     "next": "latest",
     "next-redux-wrapper": "^8.1.0",
@@ -23,14 +24,15 @@
     "react-redux": "^8.1.3"
   },
   "devDependencies": {
-    "typescript": "latest",
-    "@types/react": "latest",
+    "@types/axios": "^0.14.0",
     "@types/node": "latest",
+    "@types/react": "latest",
     "@types/react-dom": "latest",
     "autoprefixer": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
     "postcss": "latest",
     "tailwindcss": "latest",
-    "eslint": "latest",
-    "eslint-config-next": "latest"
+    "typescript": "latest"
   }
 }

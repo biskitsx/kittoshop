@@ -9,7 +9,6 @@ import { selectProduct } from '@/store/productSlice'
 
 function Kid() {
     const [loading, setLoading] = useState(false)
-    const [error, setError] = useState(false)
     const products = useSelector(selectProduct)
     return (
         <>
@@ -18,9 +17,9 @@ function Kid() {
             </div>
             <Nav />
             <div className='flex container py-12 gap-8'>
-                <Filter setLoading={setLoading} loading={loading} type='Kid' />
+                <Filter setLoading={setLoading} loading={loading} type='Fashion' />
                 <main className='flex flex-col gap-8 w-full'>
-                    <CollectionDesc collection="Kids" />
+                    <CollectionDesc collection="Fashion" />
                     <div className='grid grid-cols-2 gap-8'>
                         {products.map((product) => {
                             return (

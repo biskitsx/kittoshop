@@ -69,9 +69,9 @@ function ProductCard({ productImg, productName, productPrice, productStar }: Pro
                 {/* <figure className='hover:bg-black'>
                 </figure> */}
                 <div className="card-body text-center flex flex-col justify-center">
-                    <Rating rating={Math.floor(Math.random() * 10) % 5} />
-                    <h2 className="font-medium cursor-pointer" onClick={handleOpen}>{productName}</h2>
-                    <h2 className=""><span className='line-through text-zinc-400'>${productPrice + 20}.00</span><span className='font-semibold'> ${productPrice}.00</span></h2>
+                    <Rating rating={productStar} />
+                    <h2 className="font-normal cursor-pointer text-lg" onClick={handleOpen}>{productName}</h2>
+                    <h2 className=""><span className='line-through text-zinc-400'>${productPrice + 20}.00</span><span className='font-medium'> ${productPrice}.00</span></h2>
                 </div>
             </div>
             <label htmlFor="my-drawer-4" className='hidden' ref={drawerRef}></label>
@@ -85,7 +85,7 @@ function ProductCard({ productImg, productName, productPrice, productStar }: Pro
                         <div className='flex flex-col gap-4 '>
                             <h1 className='text-2xl font-medium'>{productName}</h1>
                             <h2 className=""><span className='line-through text-zinc-400'>${productPrice + 20}.00</span><span className='font-medium text-2xl'> ${productPrice}.00</span></h2>
-                            <Rating rating={Math.floor(Math.random() * 10) % 5} />
+                            <Rating rating={productStar} />
                             <p>Faded short sleeves t-shirt with high neckline. Soft and stretchy material for a comfortable fit. Accessorize with a straw hat and you're ready for summer!</p>
                             <ProductCounter productCount={productCount} setProductCount={setProductCount} />
                             <div>

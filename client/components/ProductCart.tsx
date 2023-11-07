@@ -16,7 +16,7 @@ function ProductCart({ productImg, productName, productPrice, count }: ProductCa
             <Image src={productImg} alt="Shoes" className='w-32 border border-gray-300' width={1000} height={1000} />
             <div>
                 <p>{productName}</p>
-                <p>{count} X ${productPrice}.00</p>
+                <p>{count} x ${productPrice}.00</p>
             </div>
             <Delete className='absolute top-1 right-1' />
         </div>

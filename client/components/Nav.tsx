@@ -2,6 +2,7 @@ import React from 'react';
 import Drawer from './Drawer';
 import { useDispatch, useSelector } from 'react-redux'
 import { selectCart } from '@/store/cartSlice';
+import Link from 'next/link';
 function Nav() {
     const cart = useSelector(selectCart)
     return (
@@ -23,7 +24,7 @@ function Nav() {
                         </div>
                     </div>
                     <div className="navbar-center">
-                        <a className="btn btn-ghost normal-case text-2xl tracking-widest" href='/'>KITTOSHOP</a>
+                        <Link className="btn btn-ghost normal-case text-2xl tracking-widest" href='/'>KITTOSHOP</Link>
                     </div>
                     <div className="navbar-end">
                         <div className="dropdown dropdown-end">
