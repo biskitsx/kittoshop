@@ -27,6 +27,17 @@ export const cartSlice = createSlice({
         // },
         addToCart(state, action) {
             state.cartList.push(action.payload);
+        },
+        removeFromCart(state, action) {
+            console.log("ky")
+            const index = state.cartList.findIndex((cartItem) => cartItem.name === action.payload.name);
+            let newCart = [...state.cartList];
+            if (index >= 0) {
+                newCart.splice(index, 1);
+            } else {
+                console.warn(`Can't remove product (id: ${action.payload.name}) as its not in cart!`)
+            }
+            state.cartList = newCart;
         }
     },
 
@@ -40,7 +51,7 @@ export const cartSlice = createSlice({
     //     },
     // },
 });
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, removeFromCart } = cartSlice.actions;
 
 
 export const selectCart = (state: AppState) => state.cart.cartList;
