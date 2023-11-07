@@ -2,11 +2,13 @@ package main
 
 import (
 	"context"
+	"os"
 
 	"github.com/biskitsx/kittoshop/server/config"
 	"github.com/biskitsx/kittoshop/server/router"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
+	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
@@ -19,6 +21,10 @@ type Podcast struct {
 }
 
 func main() {
+	err := godotenv.Load()
+	if err != nil {
+		panic("Error loading .env file")
+	}
 	client := initDatabase()
 	app := initServer()
 	router.NewRouter(app, client)
@@ -30,7 +36,7 @@ func initServer() *fiber.App {
 		ErrorHandler: config.NewCustomConfigFiber,
 	})
 	app.Use(cors.New(cors.Config{
-		AllowOrigins: "http://localhost:3000",
+		AllowOrigins: "*",
 		// AllowMethods:     strings.Split(viper.GetString("cors.allow_methods"), ","),
 		// AllowHeaders:     strings.Split(viper.GetString("cors.allow_headers"), ","),
 		AllowCredentials: true,
@@ -38,7 +44,9 @@ func initServer() *fiber.App {
 	return app
 }
 func initDatabase() *mongo.Client {
-	client, err := mongo.Connect(context.Background(), options.Client().ApplyURI("mongodb+srv://kitsugarr:08090101@cluster0.8drwgni.mongodb.net/?retryWrites=true&w=majority"))
+	MONGO_URI := os.Getenv("MONGO_URI")
+	client, err := mongo.Connect(context.Background(), options.Client().ApplyURI(MONGO_URI))
+
 	if err != nil {
 		panic(err)
 	}
