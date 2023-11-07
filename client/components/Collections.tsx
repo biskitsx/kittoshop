@@ -9,7 +9,7 @@ interface CollectionsProps {
 
 function Collections({ collectionName, collectionImg }: CollectionsProps) {
     return (
-        <Link href={`/collections/${collectionName.toLowerCase()}`} onMouseOver={() => console.log("first")}>
+        <Link href={`/collections/${collectionName.toLowerCase()}`} >
             <div className="card  rounded-none card-compact">
                 <figure>
                     <Image src={collectionImg} alt='collection' width={1000} height={1000} />
