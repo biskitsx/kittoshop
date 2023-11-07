@@ -20,19 +20,23 @@ function Kid() {
                 <Filter setLoading={setLoading} loading={loading} type='Fashion' />
                 <main className='flex flex-col gap-8 w-full'>
                     <CollectionDesc collection="Fashion" />
-                    <div className='grid grid-cols-2 gap-8'>
-                        {products.map((product) => {
-                            return (
-                                <ProductCard
-                                    key={product.id}
-                                    productImg={product.picture}
-                                    productName={product.name}
-                                    productPrice={product.price}
-                                    productStar={product.rating}
-                                />
-                            )
-                        })}
-                    </div>
+                    {loading ?
+                        <span className="loading loading-spinner loading-lg mx-auto"></span>
+                        :
+                        <div className='grid grid-cols-2 gap-8'>
+                            {products && products.map((product) => {
+                                return (
+                                    <ProductCard
+                                        key={product.id}
+                                        productImg={product.picture}
+                                        productName={product.name}
+                                        productPrice={product.price}
+                                        productStar={product.rating}
+                                    />
+                                )
+                            })}
+                        </div>
+                    }
                     <div></div>
                 </main>
             </div>
