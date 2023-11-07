@@ -1,38 +1,43 @@
-import React from 'react'
-import ProductCard from './ProductCard'
+import React, { useEffect } from 'react'
+import ProductCard, { ProductCardProps } from './ProductCard'
 import Link from 'next/link'
+import { Product } from '@/store/productSlice'
 
 function NewArrival() {
+    const [loading, setLoading] = React.useState(false)
+    const [products, setProducts] = React.useState<Product[]>([])
+    useEffect(() => {
+        fetch('http://localhost:3001/products?limit=4')
+            .then(res => res.json())
+            .then(data => {
+                setProducts(data)
+                setLoading(false)
+            })
+    }, [])
     return (
         <div className='py-12'>
             <div className='container flex flex-col gap-12 justify-center items-center'>
                 <h1 className='text-center text-3xl font-medium tracking-wider'>New Arrivals</h1>
-                <div className='grid gap-3 grid-cols-4'>
-                    <ProductCard
-                        productImg='https://cdn.shopify.com/s/files/1/2802/3570/files/1_7c928f71-f9ad-4b1f-8f15-8ec920c95ae8.png?v=1690354703'
-                        productName='Epauletter Cotton'
-                        productPrice={100}
-                        productStar={3}
-                    />
-                    <ProductCard
-                        productImg='https://jewelleryishi.myshopify.com/cdn/shop/files/4_b6655176-de58-4fc3-a8c9-202e22220bbe_720x.png?v=1690354834'
-                        productName='Epauletter Cotton'
-                        productPrice={100}
-                        productStar={3}
-                    />
-                    <ProductCard
-                        productImg='https://cdn.shopify.com/s/files/1/2802/3570/files/2_ae053932-3010-4241-954c-12354a6aa17a.png?v=1690354834'
-                        productName="Chico's Railroad"
-                        productPrice={100}
-                        productStar={3}
-                    />
-                    <ProductCard
-                        productImg='https://cdn.shopify.com/s/files/1/2802/3570/files/6_4142c849-11e5-4625-a292-748b08561ab9.png?v=1690355122'
-                        productName='Epauletter Cotton'
-                        productPrice={100}
-                        productStar={3}
-                    />
-                </div>
+                {loading ?
+                    <span className="loading loading-spinner loading-lg mx-auto"></span>
+                    :
+                    <div className='grid gap-3 grid-cols-4'>
+
+                        {products && products.map((product) => {
+                            return (
+                                <ProductCard
+                                    key={product.id}
+                                    productImg={product.picture}
+                                    productName={product.name}
+                                    productPrice={product.price}
+                                    productStar={product.rating}
+                                />
+                            )
+                        })}
+                    </div>
+                }
+                {/* <div className='grid gap-3 grid-cols-4'>
+                </div> */}
                 <Link href="/collections" className='border-b border-neutral pb-1'>VIEW ALL</Link>
             </div>
         </div>
