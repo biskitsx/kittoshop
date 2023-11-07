@@ -14,7 +14,13 @@
     100% { transform: rotateY(360deg); }
 }
 
+.color-button {
+    @apply w-8 h-8 shadow-md
+}
 
+.color-button-active {
+    @apply border-2 border-gray-800
+}
 .container {
     @apply w-10/12 
     sm:w-540
