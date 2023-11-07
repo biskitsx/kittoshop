@@ -10,7 +10,7 @@ function Nav() {
             <div className='w-full bg-white'>
                 <div className="navbar bg-base-100 container">
                     <div className="navbar-start">
-                        <div className="dropdown">
+                        {/* <div className="dropdown">
                             <label tabIndex={0} className="btn btn-ghost btn-circle">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" />
@@ -21,10 +21,15 @@ function Nav() {
                                 <li><a>Portfolio</a></li>
                                 <li><a>About</a></li>
                             </ul>
-                        </div>
-                    </div>
-                    <div className="navbar-center">
+                        </div> */}
                         <Link className="btn btn-ghost normal-case text-2xl tracking-widest" href='/'>KITTOSHOP</Link>
+                    </div>
+                    <div className="navbar-center  gap-3 hidden md:flex md:text-md text-zinc-500">
+                        <Link href='/collections' className=''>Collection</Link>
+                        <Link href='/collections/fashion' className=''>Fashion</Link>
+                        <Link href='/collections/kid' className=''>Kids</Link>
+                        <Link href='/collections/women' className=''>Women</Link>
+                        <Link href='/collections/men' className=''>Men</Link>
                     </div>
                     <div className="navbar-end">
                         <div className="dropdown dropdown-end">
