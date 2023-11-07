@@ -16,14 +16,12 @@ const style = {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: 800,
-    // height: '70%',
     bgcolor: 'background.paper',
-    // border: '2px solid #000',
     boxShadow: 24,
     p: 4,
 };
 
-interface ProductCardProps {
+export interface ProductCardProps {
     productImg: string,
     productName: string,
     productPrice: number,
@@ -42,7 +40,6 @@ function ProductCard({ productImg, productName, productPrice, productStar }: Pro
     function delay(time: number) {
         return new Promise(resolve => setTimeout(resolve, time));
     }
-
 
     const addProductToCart = (e: SyntheticEvent) => {
         setLoading(true)
