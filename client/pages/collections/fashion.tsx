@@ -16,14 +16,14 @@ function Kid() {
                 <p className='text-center'>Save Up to 50% Off On First Order!</p>
             </div>
             <Nav />
-            <div className='flex container py-12 gap-8'>
+            <div className='flex flex-col-reverse md:flex-row container py-12 gap-8'>
                 <Filter setLoading={setLoading} loading={loading} type='Fashion' />
                 <main className='flex flex-col gap-8 w-full'>
                     <CollectionDesc collection="Fashion" />
                     {loading ?
                         <span className="loading loading-spinner loading-lg mx-auto"></span>
                         :
-                        <div className='grid grid-cols-2 gap-8'>
+                        <div className='grid grid-cols-1s md:grid-cols-2 gap-8'>
                             {products && products.map((product) => {
                                 return (
                                     <ProductCard

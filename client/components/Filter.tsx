@@ -132,7 +132,7 @@ function Filter({ loading, setLoading, type }: FilterProps) {
     }, [priceFilters, colorFilters, sizeFilters])
 
     return (
-        <aside className='flex-col '>
+        <aside className='flex flex-col '>
             <div className='flex-col border-gray-300 border-t border-x flex'>
                 <div className='bg-gray-100 p-4'>
                     <h2>Filter By</h2>
