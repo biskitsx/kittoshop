@@ -43,7 +43,7 @@ export default function Home() {
                         Collection List
                     </h1>
                     <div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
-                        <Link href={"/collection/fashion"} className='flex flex-col gap-2'>
+                        <Link href={"/collections/fashion"} className='flex flex-col gap-2'>
                             <Image src={'https://jewelleryishi.myshopify.com/cdn/shop/files/img_bdd986bb-b532-404e-8b63-515ec732be25.png?v=1690373191'} alt='collection' width={1000} height={1000} className='w-full hover:scale-105 ease-in duration-100' />
                             <h3 className='text-center text-xl text-gray-800'>Fashion</h3>
                         </Link>
