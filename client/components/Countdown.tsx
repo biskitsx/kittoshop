@@ -47,8 +47,7 @@ function Countdown() {
         const countdownDate = new Date('2023-12-31T23:59:59'); // Set your target date and time
         const currentDate = new Date();
 
-        const timeDifference = countdownDate - currentDate;
-
+        const timeDifference = countdownDate.valueOf() - currentDate.valueOf();
         if (timeDifference > 0) {
             const remainingDays = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
             const remainingHours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
