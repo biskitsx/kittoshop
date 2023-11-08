@@ -13,13 +13,6 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-type Podcast struct {
-	Title  string `bson:"title,omitempty"`
-	Author string `bson:"author,omitempty"`
-	// Tags     []string `bson:"tags,omitempty"`
-	// Category string   `bson:"category,omitempty"`
-}
-
 func main() {
 	err := godotenv.Load()
 	if err != nil {
