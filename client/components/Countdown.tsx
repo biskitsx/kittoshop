@@ -72,25 +72,25 @@ function Countdown() {
         <div className="grid grid-flow-col gap-5 text-center auto-cols-max">
             <div className="flex flex-col">
                 <span className="countdown font-mono text-lg">
-                    <span style={{ "--value": days }}></span>
+                    <span style={{ "--value": days } as React.CSSProperties}></span>
                 </span>
                 days
             </div>
             <div className="flex flex-col">
                 <span className="countdown font-mono text-lg">
-                    <span style={{ "--value": hours }}></span>
+                    <span style={{ "--value": hours } as React.CSSProperties}></span>
                 </span>
                 hours
             </div>
             <div className="flex flex-col">
                 <span className="countdown font-mono text-lg">
-                    <span style={{ "--value": minutes }}></span>
+                    <span style={{ "--value": minutes } as React.CSSProperties}></span>
                 </span>
                 min
             </div>
             <div className="flex flex-col">
                 <span className="countdown font-mono text-lg">
-                    <span style={{ "--value": seconds }}></span>
+                    <span style={{ "--value": seconds } as React.CSSProperties}></span>
                 </span>
                 sec
             </div>
