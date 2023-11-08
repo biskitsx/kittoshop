@@ -7,6 +7,7 @@ import NewArrival from '@/components/NewArrival'
 import WhyMe from '@/components/WhyMe'
 import Countdown from '@/components/Countdown'
 import Link from 'next/link'
+import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,7 +21,7 @@ export default function Home() {
             <CarouselPicture />
             <NewArrival />
             <WhyMe />
-            <div className='bg-purple-50 py-12'>
+            <div className='bg-primary py-12'>
                 <div className="container flex gap-12 justify-between items-center">
                     <div>
                         <h1 className="text-2xl   text-gray-800">
@@ -38,7 +39,7 @@ export default function Home() {
             </div>
             <div className='py-12'>
                 <div className="container flex flex-col gap-12 justify-between items-center">
-                    <h1 className="text-4xl text-center  text-gray-800">
+                    <h1 className="text-3xl tracking-wider font-medium">
                         Collection List
                     </h1>
                     <div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
@@ -62,6 +63,7 @@ export default function Home() {
                 </div>
 
             </div>
+            <Footer />
         </>
     )
 }
