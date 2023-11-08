@@ -17,8 +17,8 @@ function Kid() {
                 <p className='text-center'>Save Up to 50% Off On First Order!</p>
             </div>
             <Nav />
-            <div className='flex container py-12 gap-8'>
-                <Filter setLoading={setLoading} loading={loading} type='Kid' />
+            <div className='flex flex-col-reverse md:flex-row container py-12 gap-8'>
+                <Filter setLoading={setLoading} loading={loading} type='Kids' />
                 <main className='flex flex-col gap-8 w-full'>
                     <CollectionDesc collection="Kids" />
 
