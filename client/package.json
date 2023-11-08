@@ -16,6 +16,7 @@
     "@reduxjs/toolkit": "^1.9.7",
     "axios": "^1.6.0",
     "daisyui": "^3.9.4",
+    "framer-motion": "^10.16.4",
     "next": "latest",
     "next-redux-wrapper": "^8.1.0",
     "nuka-carousel": "^6.0.3",
