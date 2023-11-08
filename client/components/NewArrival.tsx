@@ -2,12 +2,13 @@ import React, { useEffect } from 'react'
 import ProductCard, { ProductCardProps } from './ProductCard'
 import Link from 'next/link'
 import { Product } from '@/store/productSlice'
+import { ENDPOINT } from '@/store/api'
 
 function NewArrival() {
     const [loading, setLoading] = React.useState(false)
     const [products, setProducts] = React.useState<Product[]>([])
     useEffect(() => {
-        fetch('http://localhost:3001/products?limit=4')
+        fetch(`${ENDPOINT}/products?limit=4`)
             .then(res => res.json())
             .then(data => {
                 setProducts(data)
@@ -17,7 +18,7 @@ function NewArrival() {
     return (
         <div className='py-12'>
             <div className='container flex flex-col gap-12 justify-center items-center'>
-                <h1 className='text-center text-3xl font-medium tracking-wider'>New Arrivals</h1>
+                <h1 className='text-center text-3xl tracking-wider font-medium'>New Arrivals</h1>
                 {loading ?
                     <span className="loading loading-spinner loading-lg mx-auto"></span>
                     :
