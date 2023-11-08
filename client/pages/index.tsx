@@ -30,9 +30,9 @@ export default function Home() {
                         <p className='capitalize'></p>
                         Celebrate In Style At Our In-Store <br /> Launch For Our Newest Collection & Accessories
                     </div>
-                    <div className='flex flex-col sm:flex-row gap-4 items-center justify-center'>
+                    <div className='flex flex-col sm:flex-row gap-4 sm:gap-12 items-center justify-center'>
                         <Countdown />
-                        <button className='black-button'>get 20% off</button>
+                        <Link className='black-button' href="/collections/women">get 20% off</Link>
                     </div>
                     {/* <button className=''>get 20% off</button> */}
                 </div>

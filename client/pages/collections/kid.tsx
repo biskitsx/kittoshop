@@ -34,6 +34,7 @@ function Kid() {
                                         productName={product.name}
                                         productPrice={product.price}
                                         productStar={product.rating}
+                                        productSize={product.size}
                                     />
                                 )
                             })}

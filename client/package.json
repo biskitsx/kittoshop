@@ -17,7 +17,7 @@
     "axios": "^1.6.0",
     "daisyui": "^3.9.4",
     "framer-motion": "^10.16.4",
-    "next": "latest",
+    "next": "13.4.19",
     "next-redux-wrapper": "^8.1.0",
     "nuka-carousel": "^6.0.3",
     "react": "latest",

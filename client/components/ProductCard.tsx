@@ -8,14 +8,20 @@ import Modal from '@mui/material/Modal';
 import ProductCounter from './ProductCounter';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '@/store/cartSlice';
-import { HtmlContext } from 'next/dist/server/future/route-modules/app-page/vendored/contexts/entrypoints';
+import SizeSelector from './SizeSelector';
 
 const style = {
     position: 'absolute' as 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 800,
+    width: {
+        xs: '90%',
+        // sm: '50%',
+        md: '50%',
+        // lg: '50%',
+        // xl: '50%',
+    },
     bgcolor: 'background.paper',
     boxShadow: 24,
     p: 4,
@@ -26,9 +32,10 @@ export interface ProductCardProps {
     productName: string,
     productPrice: number,
     productStar: number,
+    productSize: string[]
 }
 
-function ProductCard({ productImg, productName, productPrice, productStar }: ProductCardProps) {
+function ProductCard({ productImg, productName, productPrice, productStar, productSize }: ProductCardProps) {
     const [open, setOpen] = React.useState(false);
     const [productCount, setProductCount] = React.useState(1)
     const [loading, setLoading] = React.useState(false)
@@ -49,6 +56,7 @@ function ProductCard({ productImg, productName, productPrice, productStar }: Pro
             price: productPrice,
             image: productImg,
             count: productCount
+
         }
         dispatch(addToCart(product))
         delay(500).then(() => {
@@ -81,7 +89,8 @@ function ProductCard({ productImg, productName, productPrice, productStar }: Pro
                             <h1 className='text-2xl font-medium'>{productName}</h1>
                             <h2 className=""><span className='line-through text-zinc-400'>${productPrice + 20}.00</span><span className='font-medium text-2xl'> ${productPrice}.00</span></h2>
                             <Rating rating={productStar} />
-                            <p>Faded short sleeves t-shirt with high neckline. Soft and stretchy material for a comfortable fit. Accessorize with a straw hat and you're ready for summer!</p>
+                            <p className='text-sm'>Faded short sleeves t-shirt with high neckline. Soft and stretchy material for a comfortable fit. Accessorize with a straw hat and you&apos;re ready for summer!</p>
+                            <SizeSelector productSize={productSize} />
                             <ProductCounter productCount={productCount} setProductCount={setProductCount} />
                             <div>
                                 <button className='black-button w-32 grid place-items-center' onClick={addProductToCart} disabled={loading} >

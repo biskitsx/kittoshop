@@ -8,6 +8,7 @@ function NewArrival() {
     const [loading, setLoading] = React.useState(false)
     const [products, setProducts] = React.useState<Product[]>([])
     useEffect(() => {
+        setLoading(true)
         fetch(`${ENDPOINT}/products?limit=4`)
             .then(res => res.json())
             .then(data => {
@@ -22,7 +23,7 @@ function NewArrival() {
                 {loading ?
                     <span className="loading loading-spinner loading-lg mx-auto"></span>
                     :
-                    <div className='grid gap-3 grid-cols-4'>
+                    <div className='grid gap-3 grid-cols-2 sm:grid-cols-4'>
 
                         {products && products.map((product) => {
                             return (
@@ -32,6 +33,7 @@ function NewArrival() {
                                     productName={product.name}
                                     productPrice={product.price}
                                     productStar={product.rating}
+                                    productSize={product.size}
                                 />
                             )
                         })}
