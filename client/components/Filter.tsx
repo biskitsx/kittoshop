@@ -3,6 +3,7 @@ import React, { SyntheticEvent, useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { FilterProps, PriceDTO, SizeDTO, AvailabilityDTO } from './Filter.dto'
 import axios from 'axios';
+import { ENDPOINT } from '@/store/api';
 
 
 function Filter({ loading, setLoading, type }: FilterProps) {
@@ -89,7 +90,7 @@ function Filter({ loading, setLoading, type }: FilterProps) {
             if (sizesString === "") {
                 sizesString = null
             }
-            const res = await axios.get('http://localhost:3001/products', {
+            const res = await axios.get(`${ENDPOINT}/products`, {
                 params: {
                     type: type,
                     // availability: availabilityFilters,
@@ -111,7 +112,7 @@ function Filter({ loading, setLoading, type }: FilterProps) {
     const getProduct = async () => {
         setLoading(true)
         try {
-            const res = await axios.get('http://localhost:3001/products', {
+            const res = await axios.get(`${ENDPOINT}/products`, {
                 params: {
                     type: type
                 }
