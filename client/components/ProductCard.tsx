@@ -51,7 +51,7 @@ function ProductCard({ productImg, productName, productPrice, productStar }: Pro
             count: productCount
         }
         dispatch(addToCart(product))
-        delay(1000).then(() => {
+        delay(500).then(() => {
             setLoading(false)
             handleClose()
             if (drawerRef.current) {
@@ -63,8 +63,6 @@ function ProductCard({ productImg, productName, productPrice, productStar }: Pro
         <>
             <div className="rounded-none card-compact hover:shadow-md transition-all delay-200 cursor-pointer" onClick={handleOpen}>
                 <Image src={productImg} alt="Shoes" className='w-full hover:brightness-95 transition-all' width={1000} height={1000} />
-                {/* <figure className='hover:bg-black'>
-                </figure> */}
                 <div className="card-body text-center flex flex-col justify-center">
                     <Rating rating={productStar} />
                     <h2 className="font-normal cursor-pointer text-lg" onClick={handleOpen}>{productName}</h2>
