@@ -7,7 +7,7 @@ An E-commerce web application "kittoshop" built by nextjs, go
 ![alt text](https://img2.pic.in.th/pic/-2566-11-08--20.11.30.png)
 
 ## Fashion
-![alt text]([https://img2.pic.in.th/pic/-2566-11-08--20.11.30.png](https://img5.pic.in.th/file/secure-sv1/-2566-11-08--20.11.37.png))
+![alt text](https://img5.pic.in.th/file/secure-sv1/-2566-11-08--20.11.37.png)
 
 ## Product
 ![alt text](https://img5.pic.in.th/file/secure-sv1/-2566-11-08--20.11.52.png)
